@@ -5,12 +5,8 @@ using UnityEngine;
 public class flashlightPosition : MonoBehaviour
 {
     public PlayerData playerData;
-    void Start()
-    {
-        
-    }
+    
 
-    // Update is called once per frame
     void Update()
     {
         SmoothFollow();
@@ -21,4 +17,5 @@ public class flashlightPosition : MonoBehaviour
         Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, playerData.smoothSpeed*Time.deltaTime);
         transform.position = smoothedPosition;
     }
+   
 }

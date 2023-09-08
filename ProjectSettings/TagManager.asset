@@ -3,15 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - ViewPlayer
+  - Rat
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Viewer
   - Water
   - UI
-  - 
+  - Items
   - 
   - 
   - 

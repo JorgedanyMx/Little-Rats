@@ -7,11 +7,17 @@ public class Rat : MonoBehaviour
     public Sprite[] stateSprites;
     [SerializeField] private SpriteRenderer sp;
     RATSTATES ratState;
+    private int counterSeg=0;
     void Start()
     {
         ratState = RATSTATES.CURIOUS;
         sp = GetComponent<SpriteRenderer>();
         UpdateRatSprite();
+    }
+
+    IEnumerator RatCounter()
+    {
+        yield return new WaitForSeconds(.1f);
     }
 private void UpdateRatSprite()
     {
