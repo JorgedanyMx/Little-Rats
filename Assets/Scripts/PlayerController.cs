@@ -47,6 +47,10 @@ public class PlayerController : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(rayPos, Vector2.zero, 10f,lm);
             if (hit)
             {
+                Grapes grapes = hit.transform.gameObject.GetComponent<Grapes>();
+                if (grapes!=null){
+                    grapes.SetGrapesState(false);
+                }
                 GameObject clickedObject = hit.transform.gameObject;
                 Debug.Log("Clicked on: " + clickedObject.name);
             }
