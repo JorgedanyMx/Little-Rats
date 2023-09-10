@@ -2153,7 +2153,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -5
   m_Sprite: {fileID: 21300000, guid: 1580ef908b0936c4ab314516b76aabf2, type: 3}
-  m_Color: {r: 1, g: 0.95, b: 0, a: 0.98039216}
+  m_Color: {r: 1, g: 0.95, b: 0, a: 0.44705883}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2354,14 +2354,6 @@ PrefabInstance:
     - target: {fileID: 8606355984335889947, guid: 053c9df9b8199fb44b4e612425589f76, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8606355984335889948, guid: 053c9df9b8199fb44b4e612425589f76, type: 3}
-      propertyPath: playerData
-      value: 
-      objectReference: {fileID: 11400000, guid: b18bff23805baaa468ea48a8e39910c0, type: 2}
-    - target: {fileID: 8606355984335889948, guid: 053c9df9b8199fb44b4e612425589f76, type: 3}
-      propertyPath: reaptingRateSound
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 053c9df9b8199fb44b4e612425589f76, type: 3}

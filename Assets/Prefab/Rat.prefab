@@ -52,12 +52,13 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6693ab0a33247564f99c4cc8a27a5570, type: 3}
   - {fileID: 21300000, guid: fcfe311527afe124f9e841752ce5473f, type: 3}
   - {fileID: 21300000, guid: c5b948f50b85cd145a34e692b747eae9, type: 3}
-  reaptingRateSound: 5
+  reaptingRateSound: 1
   ratIdleSounds:
   - {fileID: 8300000, guid: 1d39f3d9e4872f849b0bf51b21d002e3, type: 3}
   - {fileID: 8300000, guid: 6507248edf089b840afa323cc8c68127, type: 3}
   - {fileID: 8300000, guid: 4e35bb89b5814ac4ea12694e81887bcf, type: 3}
   - {fileID: 8300000, guid: 7a7f17126539a3944bf4689d530edcfb, type: 3}
+  playerData: {fileID: 11400000, guid: b18bff23805baaa468ea48a8e39910c0, type: 2}
   sp: {fileID: 8606355984335889949}
   audioSource: {fileID: 8606355984335889950}
 --- !u!212 &8606355984335889949
