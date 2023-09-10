@@ -12,4 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e28dd0a3a3dcd2144a044065dd7f2afc, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: 
-  position: {x: 0, y: 0, z: 0}
+  target: {x: 0.213115, y: 8.967213, z: 0}
+  cameraPos: {x: 0, y: 3, z: -10}
+  smoothSpeed: 5
+  playerState: 0
+  factorDificulty: 1

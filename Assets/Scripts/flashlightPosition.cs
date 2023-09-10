@@ -9,7 +9,11 @@ public class flashlightPosition : MonoBehaviour
 
     void Update()
     {
-        SmoothFollow();
+        if (playerData.playerState == PLAYERSTATE.RATMODE)
+        {
+            SmoothFollow();
+        }
+        
     }
     void SmoothFollow()
     {

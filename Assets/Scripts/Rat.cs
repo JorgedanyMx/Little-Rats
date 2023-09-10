@@ -5,19 +5,53 @@ using UnityEngine;
 public class Rat : MonoBehaviour
 {
     public Sprite[] stateSprites;
+    public float reaptingRateSound=5f;
+    public AudioClip[] ratIdleSounds;
+    public PlayerData playerData;
+
     [SerializeField] private SpriteRenderer sp;
+    [SerializeField] private AudioSource audioSource;
     RATSTATES ratState;
-    private int counterSeg=0;
+    private float timeStateMax = 1f;
+    private float counterSeg=0f;
     void Start()
     {
         ratState = RATSTATES.CURIOUS;
         sp = GetComponent<SpriteRenderer>();
         UpdateRatSprite();
+        counterSeg = timeStateMax;
+        StartCoroutine("DelayRatSound");
+        StartCoroutine("RatCounter");
     }
 
     IEnumerator RatCounter()
     {
         yield return new WaitForSeconds(.1f);
+        counterSeg -= .1f;
+        ChangeState();
+        StartCoroutine("RatCounter");
+    }
+    private void ChangeState()
+    {
+        if (counterSeg <= 0.0f)
+        {
+            if(ratState!= RATSTATES.ANGRY)
+            {
+                ratState++;
+                counterSeg = timeStateMax * playerData.factorDificulty;
+                UpdateRatSprite();
+            }
+            else
+            {
+                RatAttack();
+                StopAllCoroutines();
+                Destroy(transform.gameObject);
+            }
+        }
+    }
+    private void RatAttack()
+    {
+        Debug.Log("RataAtaca");
     }
 private void UpdateRatSprite()
     {
@@ -36,6 +70,22 @@ private void UpdateRatSprite()
                 sp.sprite = stateSprites[3];
                 break;
         }
+    }
+    IEnumerator DelayRatSound()
+    {
+        float randomDelay = Random.Range(0f, 3f);
+        yield return new WaitForSeconds(randomDelay+reaptingRateSound);
+        int randomSound = Random.Range(0, ratIdleSounds.Length-1);
+        PlayModPitchSound(ratIdleSounds[randomSound]);
+        StartCoroutine("DelayRatSound");
+
+    }
+    private void PlayModPitchSound(AudioClip clipS)
+    {
+        float randomPitch = Random.Range(0f, 0.2f) + 0.9f;
+        audioSource.pitch = randomPitch;
+        audioSource.clip = clipS;
+        audioSource.Play();
     }
 }
 public enum RATSTATES

@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Grapes : MonoBehaviour
+public class ConsumibleItems : MonoBehaviour
 {
     public Sprite[] stateSprites;
+    [SerializeField] private AudioSource audioSource;
     [SerializeField] private SpriteRenderer sp;
     GRAPESSTATE grapesstate=GRAPESSTATE.FULL;
+
     private void OnEnable()
     {
         SetGrapesState(true);
